@@ -5,10 +5,12 @@ var CLOUD_HEIGHT = 270;
 var GRAPH_HEIGHT = 150;
 var COLUMN_WIDTH = 40;
 var COLUMN_SPACE = 50;
-var COLUMN_X = 140;
+var COLUMN_WIDTH_AND_SPACE = COLUMN_WIDTH + COLUMN_SPACE;
+var COLUMN_X_START = 140;
 
 var GAP = 20;
 var NAME_Y = 260;
+var HEADING_FONT = '16px PT Mono';
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -16,29 +18,34 @@ var renderCloud = function (ctx, x, y, color) {
 };
 
 var renderColumn = function (ctx, time, name, columnCount, maxResult) {
-  if (name === 'Вы') {
-    ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-  } else {
-    ctx.fillStyle = 'rgba(0,0,255,' + Math.random() + ')';
-  }
+  var COLUMN_HEIGHT = time * GRAPH_HEIGHT / maxResult;
+  var COLUMN_X = COLUMN_X_START + (COLUMN_WIDTH_AND_SPACE * columnCount);
+  var COLUMN_Y = CLOUD_HEIGHT - (time * GRAPH_HEIGHT / maxResult) - GAP;
 
-  ctx.fillRect(COLUMN_X + ((COLUMN_WIDTH + COLUMN_SPACE) * columnCount), CLOUD_HEIGHT - (time * GRAPH_HEIGHT / maxResult) - GAP, COLUMN_WIDTH, time * GRAPH_HEIGHT / maxResult);
+  ctx.fillStyle = (name === 'Вы') ? 'rgba(255, 0, 0, 1)' : 'rgba(0,0,255,' + Math.random() + ')';
+  ctx.fillRect(COLUMN_X, COLUMN_Y, COLUMN_WIDTH, COLUMN_HEIGHT);
 };
 
 var renderColumnTime = function (ctx, time, columnCount, maxResult) {
+  var TIME_X = COLUMN_X_START + (COLUMN_WIDTH_AND_SPACE * columnCount);
+  var TIME_Y = CLOUD_HEIGHT - (time * GRAPH_HEIGHT / maxResult) - GAP * 2;
+
   ctx.fillStyle = '#000000';
-  ctx.fillText(Math.floor(time), COLUMN_X + ((COLUMN_WIDTH + COLUMN_SPACE) * columnCount), CLOUD_HEIGHT - (time * GRAPH_HEIGHT / maxResult) - GAP * 2);
+  ctx.fillText(Math.floor(time), TIME_X, TIME_Y);
 };
 
 var renderColumnName = function (ctx, name, columnCount) {
+  var NAME_X = COLUMN_X_START + (COLUMN_WIDTH_AND_SPACE * columnCount);
+
   ctx.fillStyle = '#000000';
-  ctx.fillText(name, COLUMN_X + ((COLUMN_WIDTH + COLUMN_SPACE) * columnCount), NAME_Y);
+  ctx.fillText(name, NAME_X, NAME_Y);
 };
 
 var renderHeading = function (ctx, text, x, y) {
-  ctx.font = '16px PT Mono';
+  ctx.font = HEADING_FONT;
   ctx.fillStyle = '#000000';
   ctx.textBaseline = 'hanging';
+
   ctx.fillText(text, x, y);
 };
 
