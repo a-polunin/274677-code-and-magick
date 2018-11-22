@@ -52,7 +52,7 @@ function compareRandom(_a, _b) {
   return Math.random() - 0.5;
 }
 
-// Блок создание волшебников и помещения их в элемент
+// Блок создания волшебников и помещения их в элемент
 var fillElementByWizards = function (wizardTemplate, data) {
   var fragment = document.createDocumentFragment();
 
