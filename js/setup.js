@@ -192,15 +192,21 @@ var setupFireball = document.querySelector('.setup-fireball-wrap');
 
 setupWizardCoat.addEventListener('click', function () {
   var coatInput = document.querySelector('input[name="coat-color"]');
-  coatInput.value = setupWizardCoat.style.fill = getRandomElementFromArray(PULL_OF_COAT_COLORS);
+  var coatColor = getRandomElementFromArray(PULL_OF_COAT_COLORS);
+  setupWizardCoat.style.fill = coatColor;
+  coatInput.value = coatColor;
 });
 
 setupWizardEyes.addEventListener('click', function () {
   var eyesInput = document.querySelector('input[name="eyes-color"]');
-  eyesInput.value = setupWizardEyes.style.fill = getRandomElementFromArray(PULL_OF_EYES_COLORS);
+  var eyesColor = getRandomElementFromArray(PULL_OF_EYES_COLORS);
+  setupWizardEyes.style.fill = eyesColor;
+  eyesInput.value = eyesColor;
 });
 
 setupFireball.addEventListener('click', function () {
   var fireballInput = document.querySelector('input[name="fireball-color"]');
-  fireballInput.value = setupFireball.style.backgroundColor = getRandomElementFromArray(PULL_OF_FIREBALL_COLORS);
+  var fireballColor = getRandomElementFromArray(PULL_OF_FIREBALL_COLORS);
+  setupFireball.style.backgroundColor = fireballColor;
+  fireballInput.value = fireballColor;
 });
