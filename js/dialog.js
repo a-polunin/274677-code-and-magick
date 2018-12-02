@@ -53,12 +53,12 @@
     document.addEventListener('mouseup', onMouseUp);
   });
 
-  setupCloseBtn.addEventListener('click', function (e) {
+  setupCloseBtn.addEventListener('click', function () {
     setupDialogElement.style.top = 80 + 'px';
     setupDialogElement.style.left = 50 + '%';
   });
 
-  setupOpenBtn.addEventListener('click', function (e) {
+  setupOpenBtn.addEventListener('click', function () {
     setupDialogElement.style.top = 80 + 'px';
     setupDialogElement.style.left = 50 + '%';
   });
