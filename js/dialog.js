@@ -4,7 +4,6 @@
 
   var setupDialogElement = document.querySelector('.setup');
   var dialogHandler = setupDialogElement.querySelector('.upload');
-  var setupCloseBtn = setupDialogElement.querySelector('.setup-close');
   var setupOpenBtn = document.querySelector('.setup-open');
 
   dialogHandler.addEventListener('mousedown', function (e) {
