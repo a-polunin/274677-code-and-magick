@@ -17,25 +17,25 @@
 
     var dragged = false;
 
-    var onMouseMove = function (moveE) {
-      moveE.preventDefault();
+    var onMouseMove = function (moveEvent) {
+      moveEvent.preventDefault();
       dragged = true;
       var shift = {
-        x: startCoords.x - moveE.clientX,
-        y: startCoords.y - moveE.clientY
+        x: startCoords.x - moveEvent.clientX,
+        y: startCoords.y - moveEvent.clientY
       };
 
       startCoords = {
-        x: moveE.clientX,
-        y: moveE.clientY
+        x: moveEvent.clientX,
+        y: moveEvent.clientY
       };
 
       setupDialogElement.style.top = (setupDialogElement.offsetTop - shift.y) + 'px';
       setupDialogElement.style.left = (setupDialogElement.offsetLeft - shift.x) + 'px';
     };
 
-    var onMouseUp = function (upE) {
-      upE.preventDefault();
+    var onMouseUp = function (upEvent) {
+      upEvent.preventDefault();
 
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
@@ -51,11 +51,6 @@
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
-  });
-
-  setupCloseBtn.addEventListener('click', function () {
-    setupDialogElement.style.top = 80 + 'px';
-    setupDialogElement.style.left = 50 + '%';
   });
 
   setupOpenBtn.addEventListener('click', function () {
