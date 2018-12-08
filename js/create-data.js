@@ -27,7 +27,7 @@
     return fullName.sort(window.util.compareRandom).join(' ');
   };
 
-  window.createData = (function () {
+  window.createData = function () {
     return createArray(window.constants.NUMBER_OF_OBJECTS);
-  })();
+  };
 })();

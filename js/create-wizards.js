@@ -33,7 +33,7 @@
   };
 
   // Вызываем функции и рендерим
-  var wizards = fillElementWithWizards(similarWizardTemplate, window.createData);
+  var wizards = fillElementWithWizards(similarWizardTemplate, window.createData());
 
   window.util.render(similarListElement, wizards);
 })();
