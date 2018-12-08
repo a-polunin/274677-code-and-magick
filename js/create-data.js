@@ -5,10 +5,10 @@
     var array = [];
     for (var i = 0; i < num; i++) {
       array.push(createRandomObject(
-          window.util.PULL_OF_NAMES,
-          window.util.PULL_OF_SURNAMES,
-          window.util.PULL_OF_COAT_COLORS,
-          window.util.PULL_OF_EYES_COLORS));
+          window.constants.PULL_OF_NAMES,
+          window.constants.PULL_OF_SURNAMES,
+          window.constants.PULL_OF_COAT_COLORS,
+          window.constants.PULL_OF_EYES_COLORS));
     }
     return array;
   };
@@ -28,6 +28,6 @@
   };
 
   window.createData = (function () {
-    return createArray(window.util.NUMBER_OF_OBJECTS);
+    return createArray(window.constants.NUMBER_OF_OBJECTS);
   })();
 })();
