@@ -1,7 +1,5 @@
 'use strict';
 (function () {
-
-
   var setupDialogElement = document.querySelector('.setup');
   var dialogHandler = setupDialogElement.querySelector('.upload');
   var setupOpenBtn = document.querySelector('.setup-open');
