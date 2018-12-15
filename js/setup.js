@@ -53,6 +53,6 @@
 
   setupWizardForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    window.backend.save(new FormData(setupWizardForm), successHandler, window.util.errorHandler);
+    window.backend.save(new FormData(setupWizardForm), successHandler, window.util.createErrorAlert);
   });
 })();

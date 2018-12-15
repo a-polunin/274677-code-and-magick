@@ -10,7 +10,7 @@
       .content
       .querySelector('.setup-similar-item');
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < window.constants.SIMILAR_WIZARDS_COUNT; i++) {
       var wizardElement = window.util.cloneElement(similarWizardTemplate);
       var randomInteger = window.util.getRandomInteger(0, data.length - 1);
 
@@ -32,5 +32,5 @@
     return wizard;
   };
 
-  window.backend.load(successHandler, window.util.errorHandler);
+  window.backend.load(successHandler, window.util.createErrorAlert);
 })();
