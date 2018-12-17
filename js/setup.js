@@ -46,4 +46,13 @@
   setupSubmit.addEventListener('keydown', function (e) {
     window.util.isEnterEvent(e, setupWizardForm.submit());
   });
+
+  var successHandler = function () {
+    setupWizardForm.classList.add('hidden');
+  };
+
+  setupWizardForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    window.backend.save(new FormData(setupWizardForm), successHandler, window.util.createErrorAlert);
+  });
 })();
