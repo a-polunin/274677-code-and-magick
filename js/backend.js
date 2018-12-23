@@ -6,7 +6,6 @@
 
     xhr.addEventListener('load', function () {
       if (xhr.status === 200) {
-        console.log(xhr.response);
         onLoadCallback(xhr.response);
       } else {
         onErrorCallback('Cтатус ответа: ' + xhr.status + ' ' + xhr.statusText);
