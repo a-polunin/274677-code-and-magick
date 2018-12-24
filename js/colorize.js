@@ -25,7 +25,7 @@
       var eyesColor = window.util.getRandomElementFromArray(window.constants.PULL_OF_EYES_COLORS);
       setupWizardEyes.style.fill = eyesColor;
       eyesInput.value = eyesColor;
-      window.debounce(window.updateWizards)();
+      window.updateWizards();
     },
     colorizeFireball: function () {
       var fireballColor = window.util.getRandomElementFromArray(window.constants.PULL_OF_FIREBALL_COLORS);
